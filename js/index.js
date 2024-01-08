@@ -15,5 +15,7 @@ async function getProducts(url) {
     })
     console.log(products);
 }
+doosdo
+dfjj
 
 getProducts(baseUrl); 
