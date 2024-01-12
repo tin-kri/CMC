@@ -1,3 +1,21 @@
+/* Background Color (Almost White):
+#f8f8f8
+
+Primary Color (Main Brand Color):
+#e4d3ec
+
+Text Color:
+Dark Text on Light Background: #333333
+
+Secondary Text (Light Text on Dark Background):
+#666666
+
+Link Color (Contrasting Color):
+#5e44ad
+
+Accent Color (for Buttons, Hover Effects, etc.):
+#ff6f61 */
+
 body {
     margin: 0;
     padding: 0;
@@ -8,6 +26,7 @@ body {
 h1 {
     font-family: 'Didact Gothic', sans-serif;
     text-transform: uppercase;
+    text-align: center;
 
 }
 
@@ -16,11 +35,13 @@ h2 {
     text-transform: uppercase;
     color: #5e44ad;
 
-
 }
 
-p {
+h3 {
     font-family: 'Didact Gothic', sans-serif;
+    color: #333333;
+
+
 }
 
 
@@ -40,9 +61,10 @@ p {
     border: 10px solid #e4d3ec;
     border-radius: 8%;
     box-shadow: 10px 10px 10px rgba(144, 106, 161, 0.7);
-    padding: 10px;
+    padding: 5px;
     text-align: center;
     background: #e4d3ec;
+    cursor: pointer;
 }
 
 .product img {
