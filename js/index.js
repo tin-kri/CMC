@@ -1,33 +1,53 @@
 const baseUrl = "http://cmc-ca.local/wp-json/wc/store/v1/products";
 const productContainer = document.querySelector(".products");
 
-async function getProducts(url) {
-    const response = await fetch(url);
-    const products = await response.json();
 
-    products.forEach(function (product) {
-        // Display product information with the image inside the product div
-        productContainer.innerHTML += `
-            <div class="product">
-                <h2>${product.name}</h2>
-              
-                <img src="${getImageUrl(product)}" alt="${product.name}">
-                <h3>$${product.prices.price / 100}</h3>
-            </div>`
-    });
-    document.querySelector(".products").addEventListener("click", () => {
-        console.log(event.target)
-    })
-    console.log(products);
+
+async function getProducts(url) {
+    try {
+        const response = await fetch(url);
+        const products = await response.json();
+
+        const fragment = document.createDocumentFragment();
+
+        products.forEach(function (product) {
+            const productElement = createProductElement(product);
+            fragment.appendChild(productElement);
+
+            // Add click event listener to each product
+            productElement.addEventListener('click', function () {
+                const productId = this.getAttribute('data-product-id');
+                // Navigate to a new page or load additional information using the productId
+                window.location.href = `/product.html?id=${productId}`;
+            });
+        });
+
+        productContainer.appendChild(fragment);
+
+        console.log(products);
+    } catch {
+        console.error('Error fetching products:');
+    }
+}
+
+function createProductElement(product) {
+    const productElement = document.createElement('div');
+    productElement.classList.add('product');
+
+    // Add data-product-id attribute to store the product ID
+    productElement.setAttribute('data-product-id', product.id);
+
+
+    productElement.innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${getImageUrl(product)}" alt="${product.name}">
+        <h3>$${product.prices.price / 100}</h3>`;
+
+    return productElement;
 }
 
 function getImageUrl(product) {
-    // Check if the product has an image
     return product.images.length > 0 ? product.images[0].src : 'path/to/placeholder-image.jpg';
-
 }
 
-
 getProducts(baseUrl);
-
-;
