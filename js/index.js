@@ -2,7 +2,6 @@ const baseUrl = "http://cmc-ca.local/wp-json/wc/store/v1/products";
 const productContainer = document.querySelector(".products");
 
 
-
 async function getProducts(url) {
     try {
         const response = await fetch(url);
@@ -45,7 +44,7 @@ function createProductElement(product) {
 
     return productElement;
 }
-
+//Struggled do get the img in the innerhtml
 function getImageUrl(product) {
     return product.images.length > 0 ? product.images[0].src : 'path/to/placeholder-image.jpg';
 }
