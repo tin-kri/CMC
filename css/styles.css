@@ -10,10 +10,10 @@ Dark Text on Light Background: #333333
 Secondary Text (Light Text on Dark Background):
 #666666
 
-Link Color (Contrasting Color):
+Contrasting Color:
 #5e44ad
 
-Accent Color (for Buttons, Hover Effects, etc.):
+Accent Color:
 #ff6f61 */
 
 body {
@@ -40,8 +40,11 @@ h2 {
 h3 {
     font-family: 'Didact Gothic', sans-serif;
     color: #333333;
+}
 
-
+p {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
 }
 
 
@@ -73,4 +76,37 @@ h3 {
     margin-bottom: 10px;
     box-shadow: 0 0 10px rgba(122, 122, 122, 0.7);
     border-radius: 4%;
+}
+
+.product-details {
+    display: grid;
+    grid-template-columns;
+    background: #e4d3ec;
+    border: 10px solid #e4d3ec;
+    border-radius: 8%;
+    box-shadow: 10px 10px 10px rgba(144, 106, 161, 0.7);
+    padding: 25px;
+
+}
+
+.product-image {
+    height: auto;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 0 10px rgba(122, 122, 122, 0.7);
+    border-radius: 4%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    padding: 10px 20px;
+    background-color: #ff6f61;
+    box-shadow: 0 0 10px rgba(187, 185, 185, 0.7);
+    color: #0F0F0F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Didact Gothic', sans-serif;
 }
