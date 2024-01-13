@@ -22,7 +22,7 @@ async function renderSingleProduct() {
     const singleData = await getSingleProduct(id);
     const singleProduct = document.getElementById("singleProduct");
 
-    // Clear the existing content in case this function is called again
+    // Did a search and got told to clear the existing content in case this function is called again
     singleProduct.innerHTML = "";
 
     if (Object.keys(singleData).length !== 0) {
@@ -56,11 +56,10 @@ async function renderSingleProduct() {
         console.log(singleProduct);
     } else {
         console.error('No data or error fetching single product.');
-        // You might want to display an error message or redirect to an error page.
     }
 }
 function getImageUrl(product) {
     return product.images.length > 0 ? product.images[0].src : 'path/to/placeholder-image.jpg';
 }
-// Call the renderSingleProduct function after defining it
+
 renderSingleProduct();
