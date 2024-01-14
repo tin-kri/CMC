@@ -1,4 +1,5 @@
-const baseUrl = "http://cmc-ca.local/wp-json/wc/store/v1/products";
+// const baseUrl = "http://cmc-ca.local/wp-json/wc/store/v1/products";
+const baseUrl = "http://cmc-ca.local/wp-json/wc/store/products"
 const productContainer = document.querySelector(".products");
 
 
