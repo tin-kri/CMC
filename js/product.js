@@ -3,7 +3,7 @@ const search = url.search;
 const params = new URLSearchParams(search);
 
 async function getSingleProduct(id) {
-    const url = `http://cmc-ca.local/wp-json/wc/store/v1/products/${id}`;
+    const url = `https://www.tinakristiansen.no/wp-json/wc/store/products/${id}`;
     try {
         const response = await fetch(url);
         if (response.ok) {
